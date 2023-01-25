@@ -9,27 +9,30 @@
 </head>
 <body>
     <section class="weather">
-        <p>Today: <span id="js-weather-code"></span></p>
+        <img id="js-weather-icon" src="">
+        <span id="js-weather-temperature"></span>
     </section>
-    <section class="jokes-box">
+    <div id="js-left-buble" class="buble-left svg2"></div>
+    <section id="js-main-buble" class="jokes-box svg1">
         <h1>Ready for some laugths?</h1>
         <div id="js-joke-container">Click the "Next joke" button to load a joke...</div>
         <div class="jokes-reporting-container">
             <div>
                 <input type="radio" id="report-joke-1" name="report-joke-radio" value="1">
-                <label for="report-joke-1">Bad Joke!</label>
+                <label for="report-joke-1">😖</label>
             </div>
             <div>
                 <input type="radio" id="report-joke-2" name="report-joke-radio" value="2">
-                <label for="report-joke-2">Average</label>
+                <label for="report-joke-2">😕</label>
             </div>
             <div>
                 <input type="radio" id="report-joke-3" name="report-joke-radio" value="3">
-                <label for="report-joke-3">Good Joke!</label>
+                <label for="report-joke-3">🤣</label>
             </div>
         </div>
         <button id="js-get-joke">Next joke</button>
     </section>
+    <div id="js-right-buble" class="buble-right svg3"></div>
 
     <script src="script.js"></script>
     <script src="meteo.js"></script>

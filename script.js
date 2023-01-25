@@ -30,6 +30,10 @@ async function getJoke() {
 	let radios = document.getElementsByName('report-joke-radio');
 	radios.forEach(radio => radio.checked = false);
 	theJoke = data;
+
+	changeBubles(mainBuble);
+	changeBubles(leftBuble);
+	changeBubles(rightBuble);
 }
 
 // Add event to the main button
@@ -58,3 +62,17 @@ function reportJoke() {
 // Add event to all radiobuttons
 const radiosBtn = document.getElementsByName('report-joke-radio');
 radiosBtn.forEach(element => element.addEventListener('click', reportJoke));
+
+// Bubles changing function
+const mainBuble = document.getElementById('js-main-buble');
+const leftBuble = document.getElementById('js-left-buble');
+const rightBuble = document.getElementById('js-right-buble');
+
+function changeBubles(buble) {
+	svgPosition = buble.className.split(' ')[1];
+	buble.classList.remove(svgPosition);
+	svgPosition = svgPosition.substring(3);
+	if (svgPosition > 8) {svgPosition = svgPosition -7;} else {svgPosition++;}
+	svgPosition = 'svg' + svgPosition;
+	buble.classList.add(svgPosition);
+}
