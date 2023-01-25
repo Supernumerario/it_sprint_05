@@ -1,1 +1,43 @@
-body { background-color: black; color: #ccc; }
+* {
+    border: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #111;
+    color: #ccc;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.weather {
+    grid-column: 1 / span 12;
+    padding: 32px 0; 
+}
+
+.jokes-box {
+    grid-column: 3 / span 8;
+    border-radius: 16px;
+    border: 1px solid #333;
+    background-color: #222;
+    text-align: center;
+    padding: 40px;
+}
+
+.jokes-box #js-joke-container {
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    line-height: 24px;
+    padding: 40px 120px;
+}
+
+.jokes-box button {
+    padding: 12px 40px;
+    border-radius: 8px;
+    font-weight: 800;
+}

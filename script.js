@@ -12,8 +12,8 @@ async function getJoke() {
 		throw new Error(`HTTP error! status: ${response.status}`);
 	}
     const data = await response.json();
+    document.getElementById('js-joke-container').innerHTML = data.joke;
     console.log('The joke: ', data.joke);
-    console.log('1');
 }
 
 const getJokeBtn = document.getElementById('js-get-joke');
