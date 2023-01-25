@@ -31,7 +31,7 @@ body {
 .jokes-box #js-joke-container {
     display: flex;
     flex-direction: column;
-    height: 200px;
+    min-height: 120px;
     line-height: 24px;
     padding: 40px 120px;
 }
@@ -40,4 +40,32 @@ body {
     padding: 12px 40px;
     border-radius: 8px;
     font-weight: 800;
+}
+
+.jokes-box button:hover {
+    background-color: #ca6800;
+    color: white;
+}
+
+.jokes-box button:active {
+    background-color: #9c5d1a;
+    color: white;
+}
+
+.jokes-reporting-container {
+    opacity: 0;
+    padding: 24px 120px;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-evenly;
+}
+
+.jokes-reporting-container div {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid;
+}
+
+.jokes-reporting-container div:has(input[type="radio"]:checked) {
+    background-color: rgb(46, 53, 110);
 }
