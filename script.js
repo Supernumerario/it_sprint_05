@@ -1,5 +1,8 @@
 let theJoke;
 const jokesReport = [];
+const jokesSource0 = 'https://icanhazdadjoke.com/';
+const jokesSource1 = 'https://api.chucknorris.io/jokes/random';
+let sourceSwitch = false;
 
 // Get a new joke
 // Show it to the user
@@ -7,7 +10,7 @@ const jokesReport = [];
 // Save the joke to "theJoke"
 async function getJoke() {
 	const response = await fetch(
-		'https://icanhazdadjoke.com/',
+		sourceSwitch? jokesSource0 : jokesSource1,
 		{
 			method: 'GET',
 			headers: {
@@ -19,6 +22,8 @@ async function getJoke() {
 		throw new Error(`HTTP error! status: ${response.status}`);
 	}
     const data = await response.json();
+	data.joke = data.joke? data.joke : data.value; // Just to integrate Chuck Norris jokes in previous code structure
+	sourceSwitch = !sourceSwitch;
     document.getElementById('js-joke-container').innerHTML = data.joke;
 	document.getElementsByClassName('jokes-reporting-container')[0].style.opacity = 1;
 
